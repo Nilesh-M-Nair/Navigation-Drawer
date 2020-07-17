@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { Button, View, Text, SafeAreaView } from 'react-native';
+import { iOSColors} from 'react-native-typography'
 
-const FirstPage = ({ navigation }) => {
+const SecondPage = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1 , padding: 16}}>
+      <View style={{ flex: 1, padding: 16, backgroundColor: iOSColors.black }}>
         <View
           style={{
             flex: 1,
@@ -17,27 +18,29 @@ const FirstPage = ({ navigation }) => {
               textAlign: 'center',
               marginBottom: 16
             }}>
-            Home
+            Profile
           </Text>
           <Button
-            onPress={() => navigation.navigate('SecondPage')}
-            title="Open Profile"
+            title="Open Random Color Picker"
+            onPress={() => navigation.navigate('FirstPage')}
+
           />
+          <Text style={{paddingVertical:10}}></Text>
           <Button
+            title="Open Formik form"
             onPress={() => navigation.navigate('ThirdPage')}
-            title="Open Settings"
           />
         </View>
-        <Text style={{ fontSize: 16, textAlign: 'center', color: 'grey' }}>
-          View souce code on
+        <Text style={{ fontSize: 16, textAlign: 'center', color: iOSColors.gray }}>
+        View souce code on
         </Text>
         <Text
-          style={{ fontSize: 18, textAlign: 'center', color: 'grey' }}>
-         https://github.com/Nilesh-M-Nair
+          style={{ fontSize: 18, textAlign: 'center', color: iOSColors.gray }}>
+          https://github.com/Nilesh-M-Nair
         </Text>
       </View>
     </SafeAreaView>
   );
 }
 
-export default FirstPage;
+export default SecondPage;
